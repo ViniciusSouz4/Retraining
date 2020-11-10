@@ -299,7 +299,7 @@ class Dcoder
       if(p_inic >= 0 && p_final < numElementos)
       {
         
-        if((p_inic > 0) && isNumero(elementos[p_inic-1]))
+        if((p_inic > 0) && (isNumero(elementos[p_inic-1]) || elementos[p_inic-1].equals(")")))
         {
           //double temp = realizarOperacao(elementos[p_inic-1], elementos[p_inic] , elementos[pos_resultado]);
           elementos[p_inic] = "*";
@@ -310,7 +310,7 @@ class Dcoder
           naoDigitos--;
         }
         
-        if((p_final < numElementos-1) && isNumero(elementos[p_final+1]))
+        if((p_final < numElementos-1) && (isNumero(elementos[p_final+1]) || elementos[p_final+1].equals("(")))
         {
           //double temp = realizarOperacao(elementos[pos_resultado], elementos[p_final], elementos[p_final+1]);
           elementos[p_final] = "*";
